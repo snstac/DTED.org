@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Obsidian Vault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>Obsidian Vault</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 25 Apr 2025 01:10:17 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 25 Apr 2025 01:10:15 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[DTED.org: Digital Terrain Elevation Data Enclave for TAK]]></title><description><![CDATA[ 
+ <br><br>DTED.org is a specialized hosting service providing digital terrain elevation data (DTED) for use with the Team Awareness Kit (TAK) suite of products. The service enhances mapping capabilities by delivering higher-resolution elevation data than standard options.<br><br>The accuracy and detail of elevation data are directly related to DTED resolution—higher resolution provides better data quality. Precise elevation information is essential for:<br>
+<br>Line-of-sight analyses
+<br>Terrain visualization
+<br>Mission planning
+<br>Navigation tasks
+<br>Various tactical operations
+<br><br>DTED follows the military specification MIL-PRF-89020B standard.<br><br>DTED.org offers two integration methods with ATAK:<br>
+<br>DTED Stream Server<br>
+Functions as a drop-in replacement for ATAK's default DTED Stream Server (TPC).
+<br>Simple DTED Streamer<br>
+Operates as a Simple DTED Server for ATAK's <a data-tooltip-position="top" aria-label="https://tak.gov/plugins/simple-dted-streamer" rel="noopener nofollow" class="external-link" href="https://tak.gov/plugins/simple-dted-streamer" target="_blank">Simple DTED Streamer</a> plugin.
+<br><br>ATAK's default DTED data source is the TPC's DTED Stream Server at TAK.gov, which provides DTED0 files according to ATAK documentation:<br>
+TPC provides DTED0 for four corners of the hemisphere via downloadable .zip files that contain uncompressed DTED files. 
+<br>Four Corners refer to the Earth's hemispheres: <br>
+<br>North West (NW) &lt;-- CONUS
+<br>North East (NE)
+<br>South West (SW)
+<br>South East (SE)
+<br><br>For each U.S. state, DTED.org adds DTED2 data to the four corners DTED file for that hemisphere, this has many benefits:<br>
+<br>Download hemisphere-level DTED0 data from an alternative sources.
+<br>Simultaneously obtain state-level DTED2 data for an AOI.
+<br>Complete the entire process in a single request.
+<br>Integrate data without manual loading (no hand jamming).
+<br>Enable setup through a simple QR code scan.
+<br><br>Once implemented on an ATAK end-user device, elevation accuracy can improve to approximately 30 meters—significantly better than standard DTED0 resolution.<br><br>DTED.org is currently in beta, but you're welcome to evaluate DTED.org with California DTED2 data by following one of the instructions below.<br><br>Scan the following bar code using the camera on your ATAK device, using the Android camera app (not ATAK QuickCam):<br>[TK]<br><br>TK<br><br>&lt;entry key="prefs_dted_stream_server" class="class java.lang.String"&gt;ca.dted.org&lt;/entry&gt;
+&lt;entry key="simpleDtedStreamer.streaming_dted_uri_key" class="class java.lang.String"&gt;https://ca.dted.org&lt;/entry&gt;
+&lt;entry key="prefs_dted_stream" class="class java.lang.Boolean"&gt;true&lt;/entry&gt;
+<br><br>For California (explicit values for ATAK):<br>
+<br>DTED Stream Server: ca.dted.org
+<br>Simple DTED Server: https://ca.dted.org
+<br><br><br>If managing Data Packages is your thing, by all means.<br><br><br>For each state, DTED.org creates an enhanced NW hemisphere DTED data file. The enhanced file contains both DTED0 data as well as DTED2 data for that state.<br>For example:<br>
+The TPC four-corners DTED file for NW contains this area of California at DTED0 (900 m) resolution:
+
+<br>w115/n32.dt0
+
+ DTED creates a unique state-by-state four-corners DTED file for NW containing the file:
+
+<br>w115/n32.dt2
+
+ This adds DTED2 (30 m) for that area of California..
+<br><br>Provides and index and compressed DTED files for each state through normal plugin configuration using a state-by-state URL with the following schema:<br>
+<br>Server Name: https://STATE.dted.org
+
+<br>Where STATE is your state's two letter abbreviation.<br>
+For Example: For California (CA) Server Name: https://CA.dted.org
+
+
+<br><br><br><br>
+<br>🔽 Build a public DTED server
+<br><br>
+<br>
+<a data-tooltip-position="top" aria-label="digital terrain elevation data (DTED)" data-href="digital terrain elevation data (DTED)" href="digital-terrain-elevation-data-(dted).html" class="internal-link" target="_self" rel="noopener nofollow">DTED</a>, <a data-tooltip-position="top" aria-label="Team Awareness Kit (TAK)" data-href="Team Awareness Kit (TAK)" href="everything/team-awareness-kit-(tak).html" class="internal-link" target="_self" rel="noopener nofollow">TAK</a>, <a data-tooltip-position="top" aria-label="Android Team Awareness Kit (ATAK)" data-href="Android Team Awareness Kit (ATAK)" href="everything/android-team-awareness-kit-(atak).html" class="internal-link" target="_self" rel="noopener nofollow">ATAK</a>
+
+<br>
+<a data-href="Mike Torphy" href="everything/mike-torphy.html" class="internal-link" target="_self" rel="noopener nofollow">Mike Torphy</a> asked.
+
+<br>
+<a data-href="Chris Berry" href="everything/chris-berry.html" class="internal-link" target="_self" rel="noopener nofollow">Chris Berry</a> asked.
+
+<br>
+<a data-tooltip-position="top" aria-label="https://tak.gov/documentation/resources/civ-documentation/simple-dted-streamer" rel="noopener nofollow" class="external-link" href="https://tak.gov/documentation/resources/civ-documentation/simple-dted-streamer" target="_blank">Simple DTED Streamer</a> (TPC Docs)
+
+<br>
+<a data-tooltip-position="top" aria-label="https://wiki.tak.gov/spaces/DEV/pages/106332236/Simple+DTED+Streamer" rel="noopener nofollow" class="external-link" href="https://wiki.tak.gov/spaces/DEV/pages/106332236/Simple+DTED+Streamer" target="_blank">Simple DTED Streamer</a> (TPC Confluence)
+
+<br>
+<a data-tooltip-position="top" aria-label="https://www.civtak.org/elevation-data/" rel="noopener nofollow" class="external-link" href="https://www.civtak.org/elevation-data/" target="_blank">CIVTAK Article</a>
+
+<br>
+<a data-tooltip-position="top" aria-label="https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV/blob/889eee292c43d3d2eafdd1f2fbf378ad5cd89ecc/atak/ATAK/app/src/main/java/com/atakmap/android/elev/ElevationDownloader.java#L294C30-L294C38" rel="noopener nofollow" class="external-link" href="https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV/blob/889eee292c43d3d2eafdd1f2fbf378ad5cd89ecc/atak/ATAK/app/src/main/java/com/atakmap/android/elev/ElevationDownloader.java#L294C30-L294C38" target="_blank">ATAK Implementation</a>
+
+<br>
+<a rel="noopener nofollow" class="external-link" href="https://tak.gov/elevation/DTED/dted_ne_hemi.zip" target="_blank">https://tak.gov/elevation/DTED/dted_ne_hemi.zip</a> 
+
+<br>
+<a rel="noopener nofollow" class="external-link" href="https://tak.gov/elevation/DTED/dted_nw_hemi.zip" target="_blank">https://tak.gov/elevation/DTED/dted_nw_hemi.zip</a> 
+
+<br>
+<a rel="noopener nofollow" class="external-link" href="https://tak.gov/elevation/DTED/dted_se_hemi.zip" target="_blank">https://tak.gov/elevation/DTED/dted_se_hemi.zip</a> 
+
+<br>
+<a rel="noopener nofollow" class="external-link" href="https://tak.gov/elevation/DTED/dted_sw_hemi.zip" target="_blank">https://tak.gov/elevation/DTED/dted_sw_hemi.zip</a> 
+
+<br>/DTED
+
+All DTED resides in this directory. The directory structure should look like the following:  
+/DTED/w117/n34.dt1  
+/DTED/w117/n34.dt2
+
+Where w117 represents the "westing" of the DTED and "n34.dt*" represents the "northing"  
+for the DTED. This folder structure is common when exporting DTED out of FalconView or  
+JMPS Map Data Manager so you shouldn't have to take any additional steps to format the  
+directories correctly.
+
+Also note that the app supports DTED Level 0,1,2, and 3. The various levels of DTED can be  
+co-located with one another such that you have one or more levels for a given geographic  
+location.
+
+It is important to note that your folder names and file names must follow the westing  
+and northing naming convention mentioned above.
+<br>
+<br><a data-tooltip-position="top" aria-label="https://wiki.tak.gov/spaces/DEV/pages/30736516/Folder+Structure" rel="noopener nofollow" class="external-link" href="https://wiki.tak.gov/spaces/DEV/pages/30736516/Folder+Structure" target="_blank">Source</a>
+<br>Working <a data-href="2025-04-16" href="daily-notes/2025-04-16.html" class="internal-link" target="_self" rel="noopener nofollow">2025-04-16</a><br>tangorpro:/ $ ls -al sdcard/atak/DTED/w123/
+total 36
+-rw-rw---- 1 u0_a227 media_rw 34162 2025-04-16 09:38 n37.dt0
+tangorpro:/ $ ^D
+{TAK-3.12.1}(gba@rorqual)|
+09:40:09|~/src/SNS/DTED/CA_5
+$ python -m http.server
+Serving HTTP on :: port 8000 (http://[::]:8000/) ...
+::ffff:172.17.2.157 - - [16/Apr/2025 09:40:41] "GET /index.zip HTTP/1.1" 200 -
+::ffff:172.17.2.157 - - [16/Apr/2025 09:40:59] "GET /w123/n37.dt2.zip HTTP/1.1" 200 -
+::ffff:172.17.2.157 - - [16/Apr/2025 09:41:00] "GET /w122/n37.dt2.zip HTTP/1.1" 200 -
+::ffff:172.17.2.157 - - [16/Apr/2025 09:41:01] "GET /w123/n38.dt2.zip HTTP/1.1" 200 -
+::ffff:172.17.2.157 - - [16/Apr/2025 09:41:03] "GET /w122/n38.dt2.zip HTTP/1.1" 200 -
+^C
+Keyboard interrupt received, exiting.
+{TAK-3.12.1}(gba@rorqual)|
+09:41:36|~/src/SNS/DTED/CA_5
+$ adb shell
+tangorpro:/ $ ls -al sdcard/atak/DTED/w123
+total 50844
+-rw-rw---- 1 u0_a227 media_rw    34162 2025-04-16 09:38 n37.dt0
+-rw-rw---- 1 u0_a227 media_rw 25981042 2025-04-16 09:40 n37.dt2
+-rw-rw---- 1 u0_a227 media_rw 25981042 2025-04-16 09:41 n38.dt2
+]]></description><link>public-dted2-server.html</link><guid isPermaLink="false">Public DTED2 Server.md</guid><pubDate>Fri, 25 Apr 2025 00:59:11 GMT</pubDate></item></channel></rss>

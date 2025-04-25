@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIKit Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>DTED.org: Digital Terrain Elevation Data Enclave for TAK</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1 id="dted.org-digital-terrain-elevation-data-enclave-for-tak">DTED.org:
+                Digital Terrain Elevation Data Enclave for TAK</h1>
+            <p>DTED.org is a specialized hosting service providing digital terrain
+                elevation data (DTED) for use with the Team Awareness Kit (TAK) suite of
+                products. The service enhances mapping capabilities by delivering
+                higher-resolution elevation data than standard options.</p>
+            <h2 id="elevation-data-importance">Elevation Data Importance</h2>
+            <p>The accuracy and detail of elevation data are directly related to
+                DTED resolution—higher resolution provides better data quality. Precise
+                elevation information is essential for:</p>
+            <ul>
+                <li>Line-of-sight analyses</li>
+                <li>Terrain visualization</li>
+                <li>Mission planning</li>
+                <li>Navigation tasks</li>
+                <li>Various tactical operations</li>
+            </ul>
+            <h2 id="technical-specifications">Technical Specifications</h2>
+            <p>DTED follows the military specification MIL-PRF-89020B standard.</p>
+            <h2 id="service-integration-options">Service Integration Options</h2>
+            <p>DTED.org offers two integration methods with ATAK:</p>
+            <ol type="1">
+                <li><strong>DTED Stream Server</strong><br />
+                    Functions as a drop-in replacement for ATAK’s default DTED Stream Server
+                    (TPC).</li>
+                <li><strong>Simple DTED Streamer</strong> Operates as a Simple DTED
+                    Server for ATAK’s <a href="https://tak.gov/plugins/simple-dted-streamer">Simple DTED
+                        Streamer</a> plugin.</li>
+            </ol>
+            <h2 id="comparison-with-the-tpc-dted-stream-server">Comparison with the
+                TPC DTED Stream Server</h2>
+            <p>ATAK’s default DTED data source is the TPC’s DTED Stream Server at
+                TAK.gov, which provides DTED0 files according to ATAK documentation:</p>
+            <blockquote>
+                <p>TPC provides DTED0 for four corners of the hemisphere via
+                    downloadable .zip files that contain uncompressed DTED files.</p>
+            </blockquote>
+            <p>Four Corners refer to the Earth’s hemispheres: * North West (NW)
+                &lt;– CONUS * North East (NE) * South West (SW) * South East (SE)</p>
+            <h2 id="dted.orgs-enhanced-approach">DTED.org’s Enhanced Approach</h2>
+            <p>For each U.S. state, DTED.org adds DTED2 data to the four corners
+                DTED file for that hemisphere, this has many benefits:</p>
+            <ul>
+                <li>Download hemisphere-level DTED0 data from an alternative
+                    sources.</li>
+                <li>Simultaneously obtain state-level DTED2 data for an AOI.</li>
+                <li>Complete the entire process in a single request.</li>
+                <li>Integrate data without manual loading (no hand jamming).</li>
+                <li>Enable setup through a simple QR code scan.</li>
+            </ul>
+            <h2 id="performance-improvement">Performance Improvement</h2>
+            <p>Once implemented on an ATAK end-user device, elevation accuracy can
+                improve to approximately 30 meters—significantly better than standard
+                DTED0 resolution.</p>
+            <h2 id="how-do-i-use-dted.org">How do I use DTED.org?</h2>
+            <p>DTED.org is currently in beta, but you’re welcome to evaluate
+                DTED.org with California DTED2 data by following one of the instructions
+                below.</p>
+            <h3 id="automatically-with-a-qr-code">Automatically with a QR code</h3>
+            <p>Scan the following bar code using the camera on your ATAK device,
+                using the Android camera app (not ATAK QuickCam):</p>
+            <p>[TK]</p>
+            <h3 id="manually-via-atak">Manually via ATAK</h3>
+            <p>TK</p>
+            <h3 id="using-an-atak-preferences-file">Using an ATAK Preferences
+                file</h3>
+            <div class="sourceCode" id="cb1">
+                <pre
+                    class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">entry</span><span class="ot"> key=</span><span class="st">&quot;prefs_dted_stream_server&quot;</span><span class="ot"> class=</span><span class="st">&quot;class java.lang.String&quot;</span>&gt;ca.dted.org&lt;/<span class="kw">entry</span>&gt;</span>
+            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">entry</span><span class="ot"> key=</span><span class="st">&quot;simpleDtedStreamer.streaming_dted_uri_key&quot;</span><span class="ot"> class=</span><span class="st">&quot;class java.lang.String&quot;</span>&gt;https://ca.dted.org&lt;/<span class="kw">entry</span>&gt;</span>
+            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">entry</span><span class="ot"> key=</span><span class="st">&quot;prefs_dted_stream&quot;</span><span class="ot"> class=</span><span class="st">&quot;class java.lang.Boolean&quot;</span>&gt;true&lt;/<span class="kw">entry</span>&gt;</span></code></pre>
+            </div>
+            <h3 id="other-tak-tools">Other TAK tools</h3>
+            <p>For California <strong>(explicit values for ATAK)</strong>: * DTED
+                Stream Server: <code>ca.dted.org</code> * Simple DTED Server:
+                <code>https://ca.dted.org</code>
+            </p>
+            <h2 id="faq">FAQ</h2>
+            <h3 id="cant-i-just-use-a-data-package">Can’t I just use a Data
+                Package?</h3>
+            <p>If managing Data Packages is your thing, by all means.</p>
+            <h3 id="under-the-hood">Under the hood</h3>
+            <h3 id="atak-off-the-shelf">ATAK Off-the-Shelf</h3>
+            <p>For each state, DTED.org creates an enhanced NW hemisphere DTED data
+                file. The enhanced file contains both DTED0 data as well as DTED2 data
+                for that state.</p>
+            <p>For example:</p>
+            <blockquote>
+                <p>The TPC four-corners DTED file for NW contains this area of
+                    California at DTED0 (900 m) resolution: * <code>w115/n32.dt0</code></p>
+                <p>DTED creates a unique state-by-state four-corners DTED file for NW
+                    containing the file: * <code>w115/n32.dt2</code></p>
+                <p>This adds DTED2 (30 m) for that area of California..</p>
+            </blockquote>
+            <h3 id="simple-dted-server">Simple DTED Server</h3>
+            <p>Provides and index and compressed DTED files for each state through
+                normal plugin configuration using a state-by-state URL with the
+                following schema:</p>
+            <ul>
+                <li>Server Name: <code>https://STATE.dted.org</code>
+                    <ul>
+                        <li>Where <code>STATE</code> is your state’s two letter abbreviation.
+                            For Example: For California (<code>CA</code>) Server Name:
+                            <code>https://CA.dted.org</code>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h3 id="dted-resolution">DTED Resolution</h3>
+            <table>
+                <colgroup>
+                    <col style="width: 9%" />
+                    <col style="width: 24%" />
+                    <col style="width: 66%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>SRTM</th>
+                        <th>DTED</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Level 0</td>
+                        <td>N/A</td>
+                        <td>30 arc-second (~1 km)</td>
+                    </tr>
+                    <tr>
+                        <td>Level 1</td>
+                        <td>3 arc-second (~90 m)</td>
+                        <td>3 arc-second (~90 m)</td>
+                    </tr>
+                    <tr>
+                        <td>Level 2</td>
+                        <td>1 arc-second (~30 m)</td>
+                        <td>1 arc-second (~30 m)</td>
+                    </tr>
+                    <tr>
+                        <td>Level 3+</td>
+                        <td>Not applicable</td>
+                        <td>Higher-res, varies (classified or limited availability)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This section contains information about the UIKit website.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Get in touch with us through this section.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Senors &amp; Signals LLC https://www.snstac.com/</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
