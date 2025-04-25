@@ -1,1 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><preferences><preference version="1" name="com.atakmap.app_preferences"><entry key="prefs_dted_stream_server" class="class java.lang.String">CA.dted.org</entry><entry key="simpleDtedStreamer.streaming_dted_uri_key" class="class java.lang.String">https://CA.dted.org</entry><entry key="prefs_dted_stream" class="class java.lang.Boolean">true</entry></preference></preferences>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preferences>
+    <preference version="1" name="com.atakmap.app_preferences">
+        <entry key="prefs_dted_stream_server" class="class java.lang.String">CA.DTED.org</entry>
+        <entry key="simpleDtedStreamer.streaming_dted_uri_key" class="class java.lang.String">https://CA.DTED.org</entry>
+        <entry key="prefs_dted_stream" class="class java.lang.Boolean">true</entry>
+    </preference>
+</preferences>
