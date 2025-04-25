@@ -1,4 +1,4 @@
-![](https://dted.org/media/DTED.org-50pct.png)
+![](https://dted.org/media/DTED.org.png)
 
 # DTED.org: Digital Terrain Elevation Data Enclave for TAK
 
