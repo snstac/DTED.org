@@ -1,6 +1,8 @@
+![DTED.org Logo](media/noun-elevation-5901019-10pct.png)
+
 # DTED.org: Digital Terrain Elevation Data Enclave for TAK
 
-DTED.org is a specialized hosting service providing digital terrain elevation data (DTED) for use with the Team Awareness Kit (TAK) suite of products. The service enhances mapping capabilities by delivering higher-resolution elevation data than standard options.
+DTED.org is a specialized hosting service providing [digital terrain elevation data (DTED)](https://en.wikipedia.org/wiki/DTED) for use with the [Team Awareness Kit (TAK)](https://www.tak.gov) suite of products. The service enhances mapping capabilities by delivering higher-resolution elevation data than standard options.
 
 ---
 
@@ -18,7 +20,7 @@ The accuracy and detail of elevation data are directly related to DTED resolutio
 
 ## Technical Specifications
 
-DTED follows the military specification **MIL-PRF-89020B** standard.
+DTED follows the specification [**MIL-PRF-89020B**](http://www.pancroma.com/downloads/MIL-PDF-89020B.pdf) standard.
 
 ---
 
@@ -26,8 +28,8 @@ DTED follows the military specification **MIL-PRF-89020B** standard.
 
 DTED.org offers two integration methods with ATAK:
 
-1. **DTED Stream Server**  
-   Functions as a drop-in replacement for ATAK's default DTED Stream Server (TPC).
+1. **DTED Stream Server**
+   Functions as a drop-in replacement for ATAK's default DTED Stream Server (TPC). Works with off-the-shelf ATAK, no additional plugins required.
 
 2. **Simple DTED Streamer**  
    Operates as a Simple DTED Server for ATAK's [Simple DTED Streamer](https://tak.gov/plugins/simple-dted-streamer) plugin.
@@ -41,6 +43,7 @@ ATAK's default DTED data source is the TPC's DTED Stream Server at TAK.gov, whic
 > TPC provides DTED0 for four corners of the hemisphere via downloadable .zip files that contain uncompressed DTED files.
 
 The "Four Corners" refer to the Earth's hemispheres:  
+
 - **North West (NW)** (includes CONUS)  
 - **North East (NE)**  
 - **South West (SW)**  
@@ -62,7 +65,7 @@ For each U.S. state, DTED.org adds DTED2 data to the four corners DTED file for 
 
 ## Performance Improvement
 
-Once implemented on an ATAK end-user device, elevation accuracy can improve to approximately **30 meters**—significantly better than standard DTED0 resolution.
+Once implemented on an ATAK end-user device, elevation accuracy can improve to approximately **30 meters** — significantly better than standard DTED0 resolution.
 
 ---
 
@@ -102,6 +105,12 @@ For California **(explicit values for ATAK)**:
 
 ## FAQ
 
+### Will this overwrite my existing DTED data?
+
+ATAK takes an additive approach to unpacking DTED data, that is, it will add new DTED data to existing DTED data. 
+
+For example, if ATAK is configured to use the WA.DTED.org server, and is switched to use the CA.DTED.org server, both states DTED data will persist on the EUD.
+
 ### Can't I just use a Data Package?
 
 If managing Data Packages is your thing, by all means.
@@ -116,13 +125,13 @@ For each state, DTED.org creates an enhanced NW hemisphere DTED data file. The e
 
 For example:
 
->The TPC four-corners DTED file for NW contains this area of California at DTED0 (900 m) resolution:
+> The TPC four-corners DTED file for NW contains this area of California at DTED0 (900 m) resolution:
 >* `w115/n32.dt0`
 >
- DTED creates a unique state-by-state four-corners DTED file for NW containing the file:
+> DTED creates a unique state-by-state four-corners DTED file for NW containing the file:
 >* `w115/n32.dt2`
 >
- This adds DTED2 (30 m) for that area of California.
+> This adds DTED2 (30 m) for that area of California.
 
 ---
 

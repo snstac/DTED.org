@@ -106,13 +106,19 @@
                 </div>
 
                 <div class="uk-width-medium-3-4">
+<figure>
+<img src="media/noun-elevation-5901019-10pct.png" alt="DTED.org Logo" />
+<figcaption aria-hidden="true">DTED.org Logo</figcaption>
+</figure>
 <h1
 id="dted.org-digital-terrain-elevation-data-enclave-for-tak">DTED.org:
 Digital Terrain Elevation Data Enclave for TAK</h1>
-<p>DTED.org is a specialized hosting service providing digital terrain
-elevation data (DTED) for use with the Team Awareness Kit (TAK) suite of
-products. The service enhances mapping capabilities by delivering
-higher-resolution elevation data than standard options.</p>
+<p>DTED.org is a specialized hosting service providing <a
+href="https://en.wikipedia.org/wiki/DTED">digital terrain elevation data
+(DTED)</a> for use with the <a href="https://www.tak.gov">Team Awareness
+Kit (TAK)</a> suite of products. The service enhances mapping
+capabilities by delivering higher-resolution elevation data than
+standard options.</p>
 <hr />
 <h2 id="why-elevation-data-matters">Why Elevation Data Matters</h2>
 <p>The accuracy and detail of elevation data are directly related to
@@ -127,15 +133,16 @@ elevation information is essential for:</p>
 </ul>
 <hr />
 <h2 id="technical-specifications">Technical Specifications</h2>
-<p>DTED follows the military specification
-<strong>MIL-PRF-89020B</strong> standard.</p>
+<p>DTED follows the specification <a
+href="http://www.pancroma.com/downloads/MIL-PDF-89020B.pdf"><strong>MIL-PRF-89020B</strong></a>
+standard.</p>
 <hr />
 <h2 id="integration-options">Integration Options</h2>
 <p>DTED.org offers two integration methods with ATAK:</p>
 <ol type="1">
-<li><p><strong>DTED Stream Server</strong><br />
-Functions as a drop-in replacement for ATAK’s default DTED Stream Server
-(TPC).</p></li>
+<li><p><strong>DTED Stream Server</strong> Functions as a drop-in
+replacement for ATAK’s default DTED Stream Server (TPC). Works with
+off-the-shelf ATAK, no additional plugins required.</p></li>
 <li><p><strong>Simple DTED Streamer</strong><br />
 Operates as a Simple DTED Server for ATAK’s <a
 href="https://tak.gov/plugins/simple-dted-streamer">Simple DTED
@@ -150,11 +157,16 @@ TAK.gov, which provides DTED0 files according to ATAK documentation:</p>
 <p>TPC provides DTED0 for four corners of the hemisphere via
 downloadable .zip files that contain uncompressed DTED files.</p>
 </blockquote>
-<p>The “Four Corners” refer to the Earth’s hemispheres:<br />
-- <strong>North West (NW)</strong> (includes CONUS)<br />
-- <strong>North East (NE)</strong><br />
-- <strong>South West (SW)</strong><br />
-- <strong>South East (SE)</strong></p>
+<p>The “Four Corners” refer to the Earth’s hemispheres:</p>
+<ul>
+<li><strong>North West (NW)</strong> (includes CONUS)<br />
+</li>
+<li><strong>North East (NE)</strong><br />
+</li>
+<li><strong>South West (SW)</strong><br />
+</li>
+<li><strong>South East (SE)</strong></li>
+</ul>
 <hr />
 <h2 id="dted.orgs-enhanced-approach">DTED.org’s Enhanced Approach</h2>
 <p>For each U.S. state, DTED.org adds DTED2 data to the four corners
@@ -170,8 +182,8 @@ DTED file for that hemisphere. Benefits include:</p>
 <hr />
 <h2 id="performance-improvement">Performance Improvement</h2>
 <p>Once implemented on an ATAK end-user device, elevation accuracy can
-improve to approximately <strong>30 meters</strong>—significantly better
-than standard DTED0 resolution.</p>
+improve to approximately <strong>30 meters</strong> — significantly
+better than standard DTED0 resolution.</p>
 <hr />
 <h2 id="how-to-use-dted.org">How to Use DTED.org</h2>
 <h3 id="automatically-with-a-qr-code">1. Automatically with a QR
@@ -202,6 +214,13 @@ Stream Server: <code>ca.dted.org</code> * Simple DTED Server:
 <code>https://ca.dted.org</code></p>
 <hr />
 <h2 id="faq">FAQ</h2>
+<h3 id="will-this-overwrite-my-existing-dted-data">Will this overwrite
+my existing DTED data?</h3>
+<p>ATAK takes an additive approach to unpacking DTED data, that is, it
+will add new DTED data to existing DTED data.</p>
+<p>For example, if ATAK is configured to use the WA.DTED.org server, and
+is switched to use the CA.DTED.org server, both states DTED data will
+persist on the EUD.</p>
 <h3 id="cant-i-just-use-a-data-package">Can’t I just use a Data
 Package?</h3>
 <p>If managing Data Packages is your thing, by all means.</p>
