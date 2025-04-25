@@ -29,9 +29,11 @@ DTED follows the specification [**MIL-PRF-89020B**](http://www.pancroma.com/down
 DTED.org offers two integration methods with ATAK:
 
 1. **DTED Stream Server**
+
    Functions as a drop-in replacement for ATAK's default DTED Stream Server (TPC). Works with off-the-shelf ATAK, no additional plugins required.
 
-2. **Simple DTED Streamer**  
+2. **Simple DTED Streamer**
+
    Operates as a Simple DTED Server for ATAK's [Simple DTED Streamer](https://tak.gov/plugins/simple-dted-streamer) plugin.
 
 ---
@@ -40,7 +42,7 @@ DTED.org offers two integration methods with ATAK:
 
 ATAK's default DTED data source is the TPC's DTED Stream Server at TAK.gov, which provides DTED0 files according to ATAK documentation:
 
-> TPC provides DTED0 for four corners of the hemisphere via downloadable .zip files that contain uncompressed DTED files.
+   > TPC provides DTED0 for four corners of the hemisphere via downloadable .zip files that contain uncompressed DTED files.
 
 The "Four Corners" refer to the Earth's hemispheres:  
 
@@ -98,8 +100,10 @@ Add the following entries to your ATAK preferences file:
 ## Other TAK Tools
 
 For California **(explicit values for ATAK)**:
-* DTED Stream Server: `ca.dted.org`
-* Simple DTED Server: `https://ca.dted.org`
+
+* DTED Stream Server: `CA.DTED.org`
+
+* Simple DTED Server: `https://CA.DTED.org`
 
 ---
 
@@ -126,10 +130,12 @@ For each state, DTED.org creates an enhanced NW hemisphere DTED data file. The e
 For example:
 
 > The TPC four-corners DTED file for NW contains this area of California at DTED0 (900 m) resolution:
->* `w115/n32.dt0`
+>
+> * `w115/n32.dt0`
 >
 > DTED creates a unique state-by-state four-corners DTED file for NW containing the file:
->* `w115/n32.dt2`
+>
+> * `w115/n32.dt2`
 >
 > This adds DTED2 (30 m) for that area of California.
 
@@ -139,9 +145,9 @@ For example:
 
 Provides and index and compressed DTED files for each state through normal plugin configuration using a state-by-state URL with the following schema:
 
-* Server Name: `https://STATE.dted.org`
+* Server Name: `https://STATE.DTED.org`
 	* Where `STATE` is your state's two letter abbreviation. 
-	  For Example: For California (`CA`) Server Name: `https://CA.dted.org`
+	  For Example: For California (`CA`) Server Name: `https://CA.DTED.org`
 
 ---
 

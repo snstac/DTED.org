@@ -137,11 +137,12 @@ standard.</p>
 <h2 id="integration-options">Integration Options</h2>
 <p>DTED.org offers two integration methods with ATAK:</p>
 <ol type="1">
-<li><p><strong>DTED Stream Server</strong> Functions as a drop-in
-replacement for ATAK’s default DTED Stream Server (TPC). Works with
-off-the-shelf ATAK, no additional plugins required.</p></li>
-<li><p><strong>Simple DTED Streamer</strong><br />
-Operates as a Simple DTED Server for ATAK’s <a
+<li><p><strong>DTED Stream Server</strong></p>
+<p>Functions as a drop-in replacement for ATAK’s default DTED Stream
+Server (TPC). Works with off-the-shelf ATAK, no additional plugins
+required.</p></li>
+<li><p><strong>Simple DTED Streamer</strong></p>
+<p>Operates as a Simple DTED Server for ATAK’s <a
 href="https://tak.gov/plugins/simple-dted-streamer">Simple DTED
 Streamer</a> plugin.</p></li>
 </ol>
@@ -206,9 +207,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 preferences file</a>.</p>
 <hr />
 <h2 id="other-tak-tools">Other TAK Tools</h2>
-<p>For California <strong>(explicit values for ATAK)</strong>: * DTED
-Stream Server: <code>ca.dted.org</code> * Simple DTED Server:
-<code>https://ca.dted.org</code></p>
+<p>For California <strong>(explicit values for ATAK)</strong>:</p>
+<ul>
+<li><p>DTED Stream Server: <code>CA.DTED.org</code></p></li>
+<li><p>Simple DTED Server: <code>https://CA.DTED.org</code></p></li>
+</ul>
 <hr />
 <h2 id="faq">FAQ</h2>
 <h3 id="will-this-overwrite-my-existing-dted-data">Will this overwrite
@@ -230,9 +233,15 @@ for that state.</p>
 <p>For example:</p>
 <blockquote>
 <p>The TPC four-corners DTED file for NW contains this area of
-California at DTED0 (900 m) resolution: * <code>w115/n32.dt0</code></p>
+California at DTED0 (900 m) resolution:</p>
+<ul>
+<li><code>w115/n32.dt0</code></li>
+</ul>
 <p>DTED creates a unique state-by-state four-corners DTED file for NW
-containing the file: * <code>w115/n32.dt2</code></p>
+containing the file:</p>
+<ul>
+<li><code>w115/n32.dt2</code></li>
+</ul>
 <p>This adds DTED2 (30 m) for that area of California.</p>
 </blockquote>
 <hr />
@@ -241,11 +250,11 @@ containing the file: * <code>w115/n32.dt2</code></p>
 normal plugin configuration using a state-by-state URL with the
 following schema:</p>
 <ul>
-<li>Server Name: <code>https://STATE.dted.org</code>
+<li>Server Name: <code>https://STATE.DTED.org</code>
 <ul>
 <li>Where <code>STATE</code> is your state’s two letter abbreviation.
 For Example: For California (<code>CA</code>) Server Name:
-<code>https://CA.dted.org</code></li>
+<code>https://CA.DTED.org</code></li>
 </ul></li>
 </ul>
 <hr />
