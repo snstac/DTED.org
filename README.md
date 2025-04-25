@@ -142,5 +142,3 @@ Provides and index and compressed DTED files for each state through normal plugi
 | Level 1  | 3 arc-second (~90 m) | 3 arc-second (~90 m)                                    |
 | Level 2  | 1 arc-second (~30 m) | 1 arc-second (~30 m)                                    |
 | Level 3+ | Not applicable       | Higher-res, varies (classified or limited availability) |
-|          |                      |                                                         |
-|          |                      |                                                         |
