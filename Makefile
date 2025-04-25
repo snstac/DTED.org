@@ -100,4 +100,9 @@ create-favicon:
 	@convert web/html/media/noun-elevation-5901019.png -define icon:auto-resize=64,48,32,16 web/html/favicon.ico
 	@echo "favicon.ico created at web/html/favicon.ico."
 
-.PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index create-favicon
+resize-image:
+	@echo "Resizing web/media/noun.png to 10% of its original size..."
+	@convert web/html/media/noun-elevation-5901019.png -resize 10% web/html/media/noun-elevation-5901019-10pct.png
+	@echo "Resized image saved as web/media/noun-resized.png."
+	
+.PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index create-favicon resize-image
