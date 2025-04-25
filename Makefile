@@ -71,7 +71,6 @@ build-simple-dted:
 		echo "Creating index for $$dirname..."; \
 		rm -rf data/build/out/$$dirname; \
 		python3 tools/create_index.py data/build/in/$$dirname data/build/out/$$dirname; \
-		cp web/html/header.html data/build/out/$$dirname; \
 		rm -rf $$tmpdir; \
 	done
 	@echo "Data processing complete."
