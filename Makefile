@@ -13,6 +13,8 @@ TARGETS = $(notdir $(FILES))
 # Destination folder for downloaded files
 DEST_DIR = data/stream/elevation/DTED
 
+.PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index create-favicon resize-image
+
 # Default target
 all: $(addprefix $(DEST_DIR)/, $(TARGETS))
 
@@ -58,57 +60,28 @@ build-simple-dted:
 	@mkdir -p data/stream/elevation/DTED
 	@mkdir -p data/build/in
 	@mkdir -p data/build/out
-	@for zipfile in data/src/*.zip; do \
-		dirname=$$(basename $$zipfile .zip | cut -d'-' -f1); \
-		echo "Processing $$zipfile for $$dirname..."; \
-		tmpdir=$$(mktemp -d); \
-		echo "Unzipping $$zipfile to $$tmpdir..."; \
-		unzip -q $$zipfile -d $$tmpdir; \
-		echo "Moving files to data/build/in/$$dirname..."; \
-		rm -rf data/build/in/$$dirname; \
-		mkdir -p data/build/in/$$dirname; \
-		mv $$tmpdir/*/* data/build/in/$$dirname; \
-		echo "Creating index for $$dirname..."; \
-		rm -rf data/build/out/$$dirname; \
-		python3 tools/create_index.py data/build/in/$$dirname data/build/out/$$dirname; \
-		rm -rf $$tmpdir; \
-	done
+	@bash tools/build_simple_dted.sh
 	@echo "Data processing complete."
 
-# Target to repack DTED files
 repack-dted:
-	@echo "Repacking DTED files..."
-	@for build_dir in data/build/out/*; do \
-			if [ -d "$$build_dir" ]; then \
-					dirname=$$(basename $$build_dir); \
-					echo "Repacking $$dirname..."; \
-					tmpdir=$$(mktemp -d); \
-					unzip -q data/stream/elevation/DTED/dted_nw_hemi.zip -d $$tmpdir; \
-					cp -r $$build_dir/* $$tmpdir/; \
-					mkdir -p data/stream/$$dirname; \
-					CURDIR=$(pwd); \
-					cd $$tmpdir; \
-					zip -qr $(CURDIR)/data/stream/$$dirname/dted_nw_hemi.zip .; \
-					rm -rf $$tmpdir; \
-			fi; \
-	done
-	@echo "Repacking complete."
+	@bash tools/repack_dted.sh
 
 build-index:
-	@echo "Building HTML index from README.md..."
-	@pandoc README.md -o web/html/index.html -f markdown --template web/html/standalone.html
+	@bash tools/build_index.sh
 
-# Target to convert noun.png into favicon.ico
 create-favicon:
-	@echo "Converting web/media/noun.png to favicon.ico..."
-	@convert web/html/media/noun-elevation-5901019.png -define icon:auto-resize=64,48,32,16 web/html/favicon.ico
-	@echo "favicon.ico created at web/html/favicon.ico."
+	@convert web/html/media/DTED.org.png -define icon:auto-resize=64,48,32,16 web/html/favicon.ico
 
-resize-image:
-	@echo "Resizing images to 10% of its original size..."
-	@convert web/html/media/noun-elevation-5901019.png -resize 10% web/html/media/noun-elevation-5901019-10pct.png
-	@convert web/html/media/DTED.org.png -resize 50% web/html/media/DTED.org-50pct.png
-	@convert web/html/media/DTED.org.png -resize 75% web/html/media/DTED.org-75pct.png
-	@convert web/html/media/SRTM_2-24-2016.gif -resize 10% web/html/media/SRTM_2-24-2016-10pct.gif
-	
-.PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index create-favicon resize-image
+resize-images:
+	@bash tools/resize_images.sh
+
+web: build-index create-favicon resize-images
+nginx: install-nginx-conf enable-nginx-conf
+process-data: build-simple-dted repack-dted
+	@echo "Processing data complete."
+	@echo "Run 'make web' to build the HTML index and favicon."
+	@echo "Run 'make nginx' to install and enable the Nginx configuration."
+	@echo "Run 'make clean' to remove downloaded files and build artifacts."
+	@echo "Run 'make all' to download files and process data."
+	@echo "Run 'make clean' to remove downloaded files and build artifacts."
+
