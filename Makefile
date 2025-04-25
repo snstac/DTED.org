@@ -108,5 +108,6 @@ resize-image:
 	@echo "Resizing images to 10% of its original size..."
 	@convert web/html/media/noun-elevation-5901019.png -resize 10% web/html/media/noun-elevation-5901019-10pct.png
 	@convert web/html/media/DTED.org.png -resize 50% web/html/media/DTED.org-50pct.png
+	@convert web/html/media/SRTM_2-24-2016.gif -resize 10% web/html/media/SRTM_2-24-2016-10pct.gif
 	
 .PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index create-favicon resize-image
