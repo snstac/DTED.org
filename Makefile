@@ -101,34 +101,3 @@ create-favicon:
 	@echo "favicon.ico created at web/html/favicon.ico."
 
 .PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index create-favicon
-
-
-# build-simple-dted:
-# 	@echo "Processing data..."
-	
-# 	@mkdir -p data/simple
-# 	@mkdir -p data/build
-# 	@mkdir -p data/src
-# 	@mkdir -p data/stream/elevation/DTED
-# 	@rm -rf data/build/in/*
-# 	@rm -rf data/build/out/*
-# 	@mkdir -p data/build/in
-# 	@mkdir -p data/build/out
-
-# 	@for zipfile in data/src/*.zip; do \
-# 		echo "Processing $$zipfile..."; \
-# 		dirname=$$(basename $$zipfile .zip); \
-# 		tmpdir=$$(mktemp -d); \
-
-# 		echo "Unzipping $$zipfile to $$tmpdir..."; \
-# 		unzip $$zipfile -d $$tmpdir; \ 
-
-# 		echo "Moving files to data/build/in/$$dirname..."; \
-# 		mkdir -p data/build/in/$$dirname; \
-# 		mv $$tmpdir/*/* data/build/in/$$dirname; \
-
-# 		echo "Creating index for $$dirname..."; \
-# 		python3 tools/create_index.py $$tmpdir data/build/$$dirname; \
-# 		rm -rf $$tmpdir; \
-# 	done
-# 	@echo "Data processing complete."
