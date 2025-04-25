@@ -63,12 +63,13 @@ build-simple-dted:
 		echo "Processing $$zipfile for $$dirname..."; \
 		tmpdir=$$(mktemp -d); \
 		echo "Unzipping $$zipfile to $$tmpdir..."; \
-		unzip $$zipfile -d $$tmpdir; \
+		unzip -q $$zipfile -d $$tmpdir; \
 		echo "Moving files to data/build/in/$$dirname..."; \
 		rm -rf data/build/in/$$dirname; \
 		mkdir -p data/build/in/$$dirname; \
 		mv $$tmpdir/*/* data/build/in/$$dirname; \
 		echo "Creating index for $$dirname..."; \
+		rm -rf data/build/out/$$dirname; \
 		python3 tools/create_index.py data/build/in/$$dirname data/build/out/$$dirname; \
 		rm -rf $$tmpdir; \
 	done
@@ -84,7 +85,10 @@ repack-dted:
 					tmpdir=$$(mktemp -d); \
 					unzip -q data/stream/elevation/DTED/dted_nw_hemi.zip -d $$tmpdir; \
 					cp -r $$build_dir/* $$tmpdir/; \
-					(cd $$tmpdir && zip -qr ../../data/stream/$$dirname/dted_nw_hemi.zip .); \
+					mkdir -p data/stream/$$dirname; \
+					CURDIR=$(pwd); \
+					cd $$tmpdir; \
+					zip -qr $(CURDIR)/data/stream/$$dirname/dted_nw_hemi.zip .; \
 					rm -rf $$tmpdir; \
 			fi; \
 	done
