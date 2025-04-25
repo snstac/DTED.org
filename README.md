@@ -72,7 +72,7 @@ Once implemented on an ATAK end-user device, elevation accuracy can improve to a
 
 Scan the following QR code using the camera on your ATAK device (use the Android camera app, not ATAK QuickCam):
 
-[Insert QR Code Here]
+![ATAK DTED QR code for California](https://CA.DTED.org/QR.png)
 
 ### 2. Manually via ATAK
 
