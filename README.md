@@ -76,7 +76,7 @@ Scan the following QR code using the camera on your ATAK device (use the Android
 
 ### 2. Manually via ATAK
 
-[Instructions Placeholder]
+[TK]
 
 ### 3. Using an ATAK Preferences File
 
@@ -87,6 +87,8 @@ Add the following entries to your ATAK preferences file:
 <entry key="simpleDtedStreamer.streaming_dted_uri_key" class="class java.lang.String">https://ca.dted.org</entry>
 <entry key="prefs_dted_stream" class="class java.lang.Boolean">true</entry>
 ```
+
+[Sample ATAK preferences file](https://ca.dted.org/ATAK.pref).
 
 ---
 

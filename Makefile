@@ -94,7 +94,13 @@ build-index:
 	@echo "Building HTML index from README.md..."
 	@pandoc README.md -o web/html/index.html -f markdown --template web/html/standalone.html
 
-.PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index 
+# Target to convert noun.png into favicon.ico
+create-favicon:
+	@echo "Converting web/media/noun.png to favicon.ico..."
+	@convert web/html/media/noun-elevation-5901019.png -define icon:auto-resize=64,48,32,16 web/html/favicon.ico
+	@echo "favicon.ico created at web/html/favicon.ico."
+
+.PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index create-favicon
 
 
 # build-simple-dted:
