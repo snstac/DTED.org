@@ -92,7 +92,7 @@ repack-dted:
 
 build-index:
 	@echo "Building HTML index from README.md..."
-	@pandoc README.md -o web/html/index.html -f markdown --template web/html/standalone.html --toc --toc-depth=22
+	@pandoc README.md -o web/html/index.html -f markdown --template web/html/standalone.html
 
 .PHONY: all clean install-nginx-conf enable-nginx-conf disable-nginx-conf process-data repack-dted build-index 
 
