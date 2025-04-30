@@ -1,4 +1,4 @@
-![](https://dted.org/media/DTED.org.png)
+![](https://dted.org/media/noun-elevation-5901019-10pct.png)
 
 # DTED.org: Digital Terrain Elevation Data Enclave for TAK
 
@@ -8,14 +8,17 @@
 
 ## Why Elevation Data Matters
 
-The accuracy and detail of elevation data are directly related to DTED resolution—higher resolution provides better data quality. Precise elevation information is essential for:
+The accuracy and detail of elevation data is directly related to DTED resolution - higher resolution provides better data quality. Accurate elevation information is essential for:
 
+- Crewed & Uncrewed (UAS, Drones) flight operations
 - Line-of-sight analyses
 - Terrain visualization
 - Mission planning
 - Navigation tasks
 - Tactical operations
 - Disaster response operations
+
+![Notional Difference in DTED Resolution](https://dted.org/media/dted_resolution.png)
 
 ---
 
@@ -25,11 +28,11 @@ DTED.org offers two integration methods with ATAK:
 
 1. **DTED Stream Server**
 
-   Functions as a drop-in replacement for ATAK's default DTED Stream Server (TPC). Works with off-the-shelf ATAK, no additional plugins required.
+   ATAK with no plugin required. Operates as a drop-in replacement for ATAK's default DTED Stream Server (TPC).
 
 2. **Simple DTED Streamer**
 
-   Operates as a Simple DTED Server for ATAK's [Simple DTED Streamer](https://tak.gov/plugins/simple-dted-streamer) plugin.
+   ATAK with [Simple DTED Streamer](https://tak.gov/plugins/simple-dted-streamer) plugin. Operates as a Simple DTED Server.
 
 ---
 
@@ -115,11 +118,14 @@ ATAK takes an additive approach to unpacking DTED data, that is, it will add new
 
 For example, if ATAK is configured to use the WA.DTED.org server, and is switched to use the CA.DTED.org server, both states DTED data will persist on the EUD.
 
-### Isn't DTED2 data restricted.
+### DTED data source?
 
-U.S. President Barack Obama released SRTM1 derrived DTED2 data on [September 23, 2014](https://www.jpl.nasa.gov/news/us-releases-enhanced-shuttle-land-elevation-data/).
+U.S. President Barack Obama released [Shuttle Radar Topography Mission (SRTM)](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1) 1 arc-second (SRTM1) derrived DTED2 data on [September 23, 2014](https://www.jpl.nasa.gov/news/us-releases-enhanced-shuttle-land-elevation-data/). [United States Geological Survey (USGS)](https://www.usgs.gov) makes SRTM1 derrived DTED2 data available at [EarthExplore](https://earthexplorer.usgs.gov/).
 
-USGS makes DTED2 data available at [EarthExplore](https://earthexplorer.usgs.gov/).
+The [National Geospatial-Intelligence Agency (NGA)](https://www.nga.gov) is an Intelligence Community (IC) & combat support agency responsibile for defining the DTED standard for digital elevation model (DEM) data. DTED follows the specification [MIL-PRF-89020B](http://www.pancroma.com/downloads/MIL-PDF-89020B.pdf) and is available from NGA 
+
+Other DEM specifications, including high [resolution elevation (HRE)](https://www.asprs.org/a/publications/proceedings/sanantonio09/Heady.pdf) data & [USGS GTOPO30](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-global-30-arc-second-elevation-gtopo30), are not yet supported by DTED.org.
+
 
 ### What is the source of the DTED2 data?
 
@@ -130,6 +136,16 @@ SRTM1 data was colleted between February 11 and 22, 2000 aboard the Space Shuttl
 [![SRTM index map](https://dted.org/media/SRTM_2-24-2016-10pct.gif)](https://dted.org/media/SRTM_2-24-2016.gif)
 
 * N.B.: Some restricted DTED data sources (including those from the United States Department of Defense) attempt to model the level of the ground. SRTM attempts to measure the hight of top cover (trees, rooftops, etc). [Source](https://www.civtak.org/elevation-data/)
+
+![PIA04961: Cape Town, South Africa, Perspective View, Landsat Image over SRTM Elevation](https://dted.org/media/PIA04961_modest.jpg)
+
+### What's the difference between height, elevation & altitude?
+
+Simply put, height is the distance between an object and the ground. Elevation is the distance between mean sea level (MSL) and a point on Earth. Altitude is the distance between a point on Earth and a point in the sky.
+
+DTED provides data on elevation, or the distance between MSL & a point on Earth (for example, the position of an EUD).
+
+![Height vs Elevation vs Altitude, or "Where does DTED come in?"](https://dted.org/media/elevation.png)
 
 
 ### Can't I just use a Data Package?
@@ -155,16 +171,12 @@ Sure, here's a couple of alternative guides to utilizing DTED data within ATAK:
 
 ### DTED Resolution
 
-| Level    | SRTM                 | DTED                                                    |
-| -------- | -------------------- | ------------------------------------------------------- |
-| Level 0  | N/A                  | 30 arc-second (~1 km)                                   |
-| Level 1  | 3 arc-second (~90 m) | 3 arc-second (~90 m)                                    |
-| Level 2  | 1 arc-second (~30 m) | 1 arc-second (~30 m)                                    |
-| Level 3+ | Not applicable       | Higher-res, varies (classified or limited availability) |
-
-### Technical Specifications
-
-DTED follows the specification [**MIL-PRF-89020B**](http://www.pancroma.com/downloads/MIL-PDF-89020B.pdf) standard.
+| Level    | SRTM                 | DTED Post Spacing|Horizontal Accuracy (CE90)|Vertical Accuracy (LE90)|Row x Column|
+| -------- | -------------------- | ------------------------------------------------------- |---|---|---|
+| Level 0  | N/A                  | 30 arc-seconds (900 m) |||121 x 121|
+| Level 1  | 3 arc-seconds (~90 m)| 3 arc-seconds (100 m) |50 m|30 m|1200 x 1200|
+| Level 2  | 1 arc-second (~30 m) | 1 arc-second (30 m)|23 m|18 m|3600 x 3600|
+| Level 3+ | Not applicable       | Higher-res, varies |||||
 
 ---
 

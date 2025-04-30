@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import zipfile
 import time
@@ -29,6 +31,86 @@ def write(filename, version, data):
                 output_writer.write("".join(map(str, row)) + "\n")
     except Exception as e:
         print(f"Error writing to file {filename} - {e}")
+
+
+def visualize_index(index_file):
+    try:
+        with open(index_file, "r") as f:
+            lines = f.readlines()
+
+        version = lines[0].strip()
+        timestamp = lines[1].strip()
+        data = lines[2:]
+
+        print(f"Index File Version: {version}")
+        print(f"Timestamp: {timestamp}")
+        print("World Data Visualization:")
+
+        for row in data:
+            print("".join(row.strip()))
+    except Exception as e:
+        print(f"Error visualizing index file {index_file} - {e}")
+
+
+def validate_index_file(index_file):
+    try:
+        with open(index_file, "r") as f:
+            lines = f.readlines()
+
+        version = lines[0].strip()
+        timestamp = lines[1].strip()
+        data = lines[2:]
+
+        if not version.isdigit():
+            print(f"Invalid version number: {version}")
+            return False
+
+        if not timestamp.isdigit():
+            print(f"Invalid timestamp: {timestamp}")
+            return False
+
+        for row in data:
+            if len(row.strip()) != 360:
+                print(f"Invalid row length: {len(row.strip())}")
+                return False
+
+        print("Index file is valid.")
+        return True
+    except Exception as e:
+        print(f"Error validating index file {index_file} - {e}")
+        return False
+
+
+def read_index_file(index_file):
+    try:
+        with open(index_file, "r") as f:
+            lines = f.readlines()
+
+        version = lines[0].strip()
+        timestamp = lines[1].strip()
+        data = lines[2:]
+
+        world_data = []
+        for row in data:
+            world_data.append(list(map(int, row.strip())))
+
+        return version, timestamp, world_data
+    except Exception as e:
+        print(f"Error reading index file {index_file} - {e}")
+        return None, None, None
+
+
+def write_index_file(index_file, version, timestamp, world_data):
+    try:
+        with open(index_file, "w") as f:
+            f.write(f"{version}\n")
+            f.write(f"{timestamp}\n")
+            for row in world_data:
+                f.write("".join(map(str, row)) + "\n")
+    except Exception as e:
+        print(f"Error writing index file {index_file} - {e}")
+        return False
+    return True
 
 
 def main(input_dir, output_dir):
@@ -107,9 +189,7 @@ def main(input_dir, output_dir):
                         continue
 
                     try:
-                        ns = int(
-                            "".join(filter(str.isdigit, ns_name.split(".")[0]))
-                        )
+                        ns = int("".join(filter(str.isdigit, ns_name.split(".")[0])))
                         print(f"Processing file: {ns_name}, parsed ns value: {ns}")
                         if ns_name.startswith("s"):
                             ns *= -1
@@ -124,11 +204,15 @@ def main(input_dir, output_dir):
 
                         # Debugging logs
                         print(f"ew: {ew}, ns: {ns}, mask: {mask}")
-                        print(f"Index in world array: ew + 180 = {ew + 180}, ns + 90 = {ns + 90}")
+                        print(
+                            f"Index in world array: ew + 180 = {ew + 180}, ns + 90 = {ns + 90}"
+                        )
 
                         # Validate indices
                         if not (0 <= ew + 180 < 360) or not (0 <= ns + 90 < 180):
-                            print(f"Skipping out-of-bounds indices for ew: {ew}, ns: {ns}")
+                            print(
+                                f"Skipping out-of-bounds indices for ew: {ew}, ns: {ns}"
+                            )
                             continue
 
                         world[ew + 180][ns + 90] |= mask
