@@ -137,7 +137,7 @@ SRTM1 data was colleted between February 11 and 22, 2000 aboard the Space Shuttl
 
 * N.B.: Some restricted DTED data sources (including those from the United States Department of Defense) attempt to model the level of the ground. SRTM attempts to measure the hight of top cover (trees, rooftops, etc). [Source](https://www.civtak.org/elevation-data/)
 
-![PIA04961: Cape Town, South Africa, Perspective View, Landsat Image over SRTM Elevation](https://dted.org/media/PIA04961_modest.jpg)
+[![PIA04961: Cape Town, South Africa, Perspective View, Landsat Image over SRTM Elevation](https://dted.org/media/PIA04961_modest-10pct.jpg)](https://dted.org/media/PIA04961_modest.jpg)
 
 ### What's the difference between height, elevation & altitude?
 
@@ -145,7 +145,7 @@ Simply put, height is the distance between an object and the ground. Elevation i
 
 DTED provides data on elevation, or the distance between MSL & a point on Earth (for example, the position of an EUD).
 
-![Height vs Elevation vs Altitude, or "Where does DTED come in?"](https://dted.org/media/elevation.png)
+[![Height vs Elevation vs Altitude, or "Where does DTED come in?"](https://dted.org/media/elevation-10pct.png)](https://dted.org/media/elevation.png)
 
 
 ### Can't I just use a Data Package?
@@ -171,8 +171,8 @@ Sure, here's a couple of alternative guides to utilizing DTED data within ATAK:
 
 ### DTED Resolution
 
-| Level    | SRTM                 | DTED Post Spacing|Horizontal Accuracy (CE90)|Vertical Accuracy (LE90)|Row x Column|
-| -------- | -------------------- | ------------------------------------------------------- |---|---|---|
+| Level | SRTM | DTED Post Spacing|Horizontal Accuracy (CE90)|Vertical Accuracy (LE90)|Row x Column|
+|---|---|---|---|---|---|
 | Level 0  | N/A                  | 30 arc-seconds (900 m) |||121 x 121|
 | Level 1  | 3 arc-seconds (~90 m)| 3 arc-seconds (100 m) |50 m|30 m|1200 x 1200|
 | Level 2  | 1 arc-second (~30 m) | 1 arc-second (30 m)|23 m|18 m|3600 x 3600|
