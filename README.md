@@ -18,7 +18,7 @@ The accuracy and detail of elevation data is directly related to DTED resolution
 - Tactical operations
 - Disaster response operations
 
-![Notional Difference in DTED Resolution](https://dted.org/media/dted_resolution.png)
+[![Notional Difference in DTED Resolution](https://dted.org/media/dted_resolution-10pct.png)](https://dted.org/media/dted_resolution.png)
 
 ---
 
