@@ -85,3 +85,6 @@ process-data: build-simple-dted repack-dted
 	@echo "Run 'make all' to download files and process data."
 	@echo "Run 'make clean' to remove downloaded files and build artifacts."
 
+mkdocs:
+	pip install -r docs/requirements.txt
+	mkdocs serve
