@@ -35,11 +35,11 @@ There are public, private and restricted sources of DTED2 data. DTED.org hosts S
 
 SRTM1 data was colleted between February 11 and 22, 2000 aboard the Space Shuttle Endeavour (STS-99) using the [Shuttle Radar Topography Mission (SRTM)](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005rg000183) mission payload. 
 
-[![SRTM index map](https://dted.org/media/SRTM_2-24-2016-10pct.gif)](https://dted.org/media/SRTM_2-24-2016.gif)
+[![SRTM index map](https://dted.readthedocs.io/en/latest/media/SRTM_2-24-2016-10pct.gif)][(https://dted.org/media/](https://dted.readthedocs.io/en/latest/media/)SRTM_2-24-2016.gif)
 
 * N.B.: Some restricted DTED data sources (including those from the United States Department of Defense) attempt to model the level of the ground. SRTM attempts to measure the hight of top cover (trees, rooftops, etc). [Source](https://www.civtak.org/elevation-data/)
 
-[![PIA04961: Cape Town, South Africa, Perspective View, Landsat Image over SRTM Elevation](https://dted.org/media/PIA04961_modest-50pct.jpg)](https://dted.org/media/PIA04961_modest.jpg)
+[![PIA04961: Cape Town, South Africa, Perspective View, Landsat Image over SRTM Elevation](https://dted.readthedocs.io/en/latest/media/PIA04961_modest-50pct.jpg)](https://dted.readthedocs.io/en/latest/media/PIA04961_modest.jpg)
 
 ## What's the difference between height, elevation & altitude?
 
@@ -47,7 +47,7 @@ Simply put, height is the distance between an object and the ground. Elevation i
 
 DTED provides data on elevation, or the distance between MSL & a point on Earth (for example, the position of an EUD).
 
-[![Height vs Elevation vs Altitude, or "Where does DTED come in?"](https://dted.org/media/elevation-50pct.png)](https://dted.org/media/elevation.png)
+[![Height vs Elevation vs Altitude, or "Where does DTED come in?"](https://dted.readthedocs.io/en/latest/media/elevation-50pct.png)](https://dted.readthedocs.io/en/latest/media/elevation.png)
 
 ## Why can't I use GPS elevation?
 
