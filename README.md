@@ -1,10 +1,10 @@
-![](https://dted.org/media/noun-elevation-5901019-10pct.png)
+![](https://dted.readthedocs.io/en/latest/media/noun-elevation-5901019-10pct.png)
 
 # DTED.org: Digital Terrain Elevation Data Enclave for TAK
 
-[DTED.org](https://dted.org) is a specialized hosting service providing [digital terrain elevation data (DTED)](https://en.wikipedia.org/wiki/DTED) for use with the [Team Awareness Kit (TAK)](https://www.tak.gov) suite of products. The service enhances mapping capabilities by delivering higher-resolution elevation data to TAK end user devices (EUDs), including Android Team Awareness Kit (ATAK).
+[DTED.org](https://dted.org) is a dedicated service for hosting [Digital Terrain Elevation Data (DTED)](https://en.wikipedia.org/wiki/DTED), optimized for the [Team Awareness Kit (TAK)](https://www.tak.gov) ecosystem. By providing high-resolution elevation datasets, DTED.org enhances mapping and situational awareness for TAK end-user devices (EUDs), including Android Team Awareness Kit (ATAK) and WinTAK.
 
-Once implemented on an TAK end-user device, elevation accuracy can improve to approximately **30 meters/98 feet** — significantly better than standard DTED0 (300 meters/900 feet) resolution.
+Integrating DTED.org with TAK EUDs enables elevation accuracy up to **30 meters (98 feet)**, a substantial improvement over the standard DTED0 resolution of 300 meters (900 feet).
 
 Documentation is available at [docs.DTED.org](https://docs.DTED.org/)
 
@@ -12,7 +12,7 @@ Documentation is available at [docs.DTED.org](https://docs.DTED.org/)
 
 ## Why Elevation Data Matters
 
-[![Notional Difference in DTED Resolution](https://dted.org/media/dted_resolution-10pct.png)](https://dted.org/media/dted_resolution.png)
+[![Notional Difference in DTED Resolution](https://dted.readthedocs.io/en/latest/media/dted_resolution-10pct.png)](https://dted.readthedocs.io/en/latest/media/dted_resolution.png)
 
 The accuracy and quality of elevation data depend on the resolution of the DTED and the reference used for mean sea level (zero elevation). Higher resolution provides more detailed and precise elevation data, which is essential for various applications, such as:
 
@@ -31,13 +31,14 @@ DTED uses the Earth Gravitational Model 1996 (EGM96) geoid model as its zero ele
 
 ## DTED.org's Enhanced Approach
 
-For each U.S. state, DTED.org adds DTED2 (30 m/98 ft) data to existing DTED0 (300 m/900 ft) data. Benefits include:
+For each U.S. state, DTED.org seamlessly overlays high-resolution DTED2 (30 m/98 ft) data onto standard DTED0 (300 m/900 ft) coverage. Key advantages:
 
-- Download hemisphere-level DTED0 data from alternative sources.
-- Simultaneously obtain state-level DTED2 data for an area of interest (AOI).
-- Complete the entire process in a single request.
-- Integrate data without manual loading (no hand jamming!).
-- Enable setup through a simple QR code scan.
+- Instantly access state-level DTED2 data for any area of interest (AOI).
+- Download broader hemisphere-level DTED0 data from alternative sources as needed.
+- Complete data acquisition and integration in a single streamlined request.
+- Eliminate manual data loading. No hand-jamming required!
+- Simplify device setup with a quick QR code scan.
+
 
 ---
 
