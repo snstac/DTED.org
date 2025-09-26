@@ -35,7 +35,7 @@ There are public, private and restricted sources of DTED2 data. DTED.org hosts S
 
 SRTM1 data was colleted between February 11 and 22, 2000 aboard the Space Shuttle Endeavour (STS-99) using the [Shuttle Radar Topography Mission (SRTM)](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005rg000183) mission payload. 
 
-[![SRTM index map](https://dted.readthedocs.io/en/latest/media/SRTM_2-24-2016-10pct.gif)][(https://dted.org/media/](https://dted.readthedocs.io/en/latest/media/)SRTM_2-24-2016.gif)
+[![SRTM index map](https://dted.readthedocs.io/en/latest/media/SRTM_2-24-2016-10pct.gif)](https://dted.readthedocs.io/en/latest/media/SRTM_2-24-2016.gif)
 
 * N.B.: Some restricted DTED data sources (including those from the United States Department of Defense) attempt to model the level of the ground. SRTM attempts to measure the hight of top cover (trees, rooftops, etc). [Source](https://www.civtak.org/elevation-data/)
 
